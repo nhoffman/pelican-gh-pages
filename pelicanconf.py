@@ -1,6 +1,6 @@
 AUTHOR = 'Noah Hoffman'
 SITENAME = 'Pelican GitHub Pages Quickstart'
-SITEURL = ""
+SITEURL = "https://nhoffman.github.io/pelican-gh-pages"
 
 PATH = "content"
 
