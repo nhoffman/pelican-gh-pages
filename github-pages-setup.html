@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://nhoffman.github.io/pelican-gh-pages/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://nhoffman.github.io/pelican-gh-pages/theme/pygments/github.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="https://nhoffman.github.io/pelican-gh-pages/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://nhoffman.github.io/pelican-gh-pages/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://nhoffman.github.io/pelican-gh-pages/theme/font-awesome/css/solid.css">
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<meta name="author" content="Noah Hoffman" />
+<meta name="description" content="Despite the fact that I have set up several sites hosted on GitHub Pages using Pelican, I always seem to run into problems that require me to rediscover the solution each time. So here are setup instructions in excruciating detail. Following the steps in order appears to be important. Create …" />
+<meta name="keywords" content="python">
+
+
+  <meta property="og:site_name" content="Pelican GitHub Pages Quickstart"/>
+  <meta property="og:title" content="GitHub Pages Setup"/>
+  <meta property="og:description" content="Despite the fact that I have set up several sites hosted on GitHub Pages using Pelican, I always seem to run into problems that require me to rediscover the solution each time. So here are setup instructions in excruciating detail. Following the steps in order appears to be important. Create …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="https://nhoffman.github.io/pelican-gh-pages/github-pages-setup.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2024-12-28 00:00:00-08:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="https://nhoffman.github.io/pelican-gh-pages/author/noah-hoffman.html">
+  <meta property="article:section" content="Getting Started"/>
+  <meta property="article:tag" content="python"/>
+  <meta property="og:image" content="">
+
+  <title>Pelican GitHub Pages Quickstart &ndash; GitHub Pages Setup</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="https://nhoffman.github.io/pelican-gh-pages/">
+      <img src="https://nhoffman.github.io/pelican-gh-pages/theme/img/profile.png" alt="" title="">
+    </a>
+
+    <h1>
+      <a href="https://nhoffman.github.io/pelican-gh-pages/"></a>
+    </h1>
+
+
+
+    <nav>
+      <ul class="list">
+
+
+
+          <li>
+            <a target="_self" href="https://getpelican.com/" >Pelican</a>
+          </li>
+          <li>
+            <a target="_self" href="https://www.python.org/" >Python.org</a>
+          </li>
+          <li>
+            <a target="_self" href="https://palletsprojects.com/p/jinja/" >Jinja2</a>
+          </li>
+          <li>
+            <a target="_self" href="#" >You can modify those links in your config file</a>
+          </li>
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-You can add links in your config file"
+           href="#"
+           target="_blank">
+          <i class="fa-brands fa-You can add links in your config file"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-Another social link"
+           href="#"
+           target="_blank">
+          <i class="fa-brands fa-Another social link"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+
+<article class="single">
+  <header>
+      
+    <h1 id="github-pages-setup">GitHub Pages Setup</h1>
+    <p>
+      Posted on Sat 28 December 2024 in <a href="https://nhoffman.github.io/pelican-gh-pages/category/getting-started.html">Getting Started</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Despite the fact that I have set up several sites hosted on GitHub
+Pages using Pelican, I always seem to run into problems that require
+me to rediscover the solution each time. So here are setup
+instructions in excruciating detail. Following the steps in order
+appears to be important.</p>
+<h1>Create and clone a repository</h1>
+<p>Create the repo in GitHub first and clone it; don't create it locally
+and push. After cloning, immediately create a push a gh-pages branch:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>--orphan<span class="w"> </span>gh-pages
+git<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>.
+</code></pre></div>
+
+<p>Add an <code>index.html</code></p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>index.html<span class="s">&lt;&lt;EOF</span>
+<span class="s">&lt;!DOCTYPE html&gt;</span>
+<span class="s">&lt;html lang=&quot;en&quot;&gt;</span>
+<span class="s">&lt;head&gt;</span>
+<span class="s">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span class="s">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span>
+<span class="s">    &lt;title&gt;Hello&lt;/title&gt;</span>
+<span class="s">&lt;/head&gt;</span>
+<span class="s">&lt;body&gt;</span>
+<span class="s">    &lt;h1&gt;Hello, World!&lt;/h1&gt;</span>
+<span class="s">&lt;/body&gt;</span>
+<span class="s">&lt;/html&gt;</span>
+<span class="s">EOF</span>
+</code></pre></div>
+
+<p>Add, commit, push, and checkout main:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>index.html
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;create clean gh-pages&#39;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>gh-pages
+git<span class="w"> </span>checkout<span class="w"> </span>main
+</code></pre></div>
+
+<h1>Configure Pages for this repository</h1>
+<p>Visit your repo page on GitHub. First, configure Pages by visiting
+<code>Settings --&gt; Pages</code> and confirm that "Build and Deployment" looks like
+this:</p>
+<p><img src="https://nhoffman.github.io/pelican-gh-pages/gh-pages-setup/pages-settings.png"/></p>
+<p>Also make note of the site url - we'll need this below.</p>
+<p>I'm pretty sure that this configuration is selected automatically when
+the <code>gh-pages</code> branch is created (hence the need to do the above step
+early in the process).</p>
+<p>While we are in settings, let's head off a permissions error on the
+Actions build step by going to <code>Settings --&gt; General --&gt; Workflow
+Permissions</code> and enabling read and write permissions:</p>
+<p><img src="https://nhoffman.github.io/pelican-gh-pages/gh-pages-setup/workflow-permissions.png"/></p>
+<h1>Create a minimal site</h1>
+<p>Everything should now be set up on GitHub to succeed the first time
+you push. Let's create a minimal site with the necessary
+configuration. We'll be using <code>uv</code>, so make sure this is installed.</p>
+<p>Create a <code>requirements.txt</code> file and set up a development environment.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;pelican[markdown]&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+uv<span class="w"> </span>virtualenv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre></div>
+
+<p>Now run the quickstart to create a site, choosing mostly defaults.
+Note that it allows you to specify a url prefix, but it fails to
+actually add this to <code>pelicanconf.py</code>, leading to much
+head-scratching. This is the url that we noted in the Pages settings
+above.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="k">Where</span><span class="w"> </span><span class="n">do</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="n">site</span><span class="vm">?</span><span class="w"> </span><span class="o">[</span><span class="n">.</span><span class="o">]</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">What</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="n">site</span><span class="vm">?</span><span class="w"> </span><span class="n">Pelican</span><span class="w"> </span><span class="n">GitHub</span><span class="w"> </span><span class="n">Pages</span><span class="w"> </span><span class="n">Quickstart</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Who</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">author</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="n">site</span><span class="vm">?</span><span class="w"> </span><span class="n">Noah</span><span class="w"> </span><span class="n">Hoffman</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">What</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">language</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="n">site</span><span class="vm">?</span><span class="w"> </span><span class="o">[</span><span class="n">en</span><span class="o">]</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="k">prefix</span><span class="vm">?</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="p">.,</span><span class="w"> </span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="w">   </span><span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="n">Y</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">What</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="k">prefix</span><span class="vm">?</span><span class="w"> </span><span class="p">(</span><span class="n">see</span><span class="w"> </span><span class="n">above</span><span class="w"> </span><span class="n">example</span><span class="p">;</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="k">trailing</span><span class="w"> </span><span class="n">slash</span><span class="p">)</span><span class="w"> </span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">nhoffman</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">pelican</span><span class="o">-</span><span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">enable</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="n">pagination</span><span class="vm">?</span><span class="w"> </span><span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">How</span><span class="w"> </span><span class="n">many</span><span class="w"> </span><span class="n">articles</span><span class="w"> </span><span class="n">per</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="n">do</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="vm">?</span><span class="w"> </span><span class="o">[</span><span class="n">10</span><span class="o">]</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">What</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="nc">time</span><span class="w"> </span><span class="k">zone</span><span class="vm">?</span><span class="w"> </span><span class="o">[</span><span class="n">Europe/Rome</span><span class="o">]</span><span class="w"> </span><span class="n">America</span><span class="o">/</span><span class="n">Los_Angeles</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">generate</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">tasks</span><span class="p">.</span><span class="n">py</span><span class="o">/</span><span class="n">Makefile</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">automate</span><span class="w"> </span><span class="n">generation</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">publishing</span><span class="vm">?</span><span class="w"> </span><span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="n">n</span>
+</code></pre></div>
+
+<p>Open <code>pelicanconf.py</code> in your editor and add the Pages url to
+<code>SITE_URL</code> (there should not be a trailing slash).</p>
+<div class="highlight"><pre><span></span><code><span class="n">SITEURL</span> <span class="o">=</span> <span class="s2">&quot;https://nhoffman.github.io/pelican-gh-pages&quot;</span>
+</code></pre></div>
+
+<p>Add the <code>Flex</code> theme in the config as well:</p>
+<div class="highlight"><pre><span></span><code><span class="n">THEME</span> <span class="o">=</span> <span class="s2">&quot;./Flex&quot;</span>
+</code></pre></div>
+
+<p>We'll provide the <code>Flex</code> theme as a git submodule (note the detail in
+the Action config below required to include the submodule when the
+repo is cloned in the build environment):</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>https://github.com/alexandrevicenzi/Flex.git<span class="w"> </span>Flex
+</code></pre></div>
+
+<p>Add a page stub to content/ (otherwise the first build will fail):</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>content/first_post.md<span class="s">&lt;&lt;EOF</span>
+<span class="s">Title: Page Stub</span>
+<span class="s">Date: 2024-12-25</span>
+<span class="s">Category: Getting Started</span>
+
+<span class="s">This is a page stub</span>
+<span class="s">EOF</span>
+</code></pre></div>
+
+<p>Finally, save the following in .github/workflows/pelican.yml</p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pelican site CI</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">submodules</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nelsonjchen/gh-pages-pelican-action@0.1.10</span>
+<span class="w">      </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">GITHUB_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{secrets.GITHUB_TOKEN}}</span>
+</code></pre></div>
+
+<p>Specifying "submodules: true" in the checkout action: this ensures
+that the Flex submodule is cloned.</p>
+<p>Ignore some files:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>.gitignore<span class="s">&lt;&lt;EOF</span>
+<span class="s">output</span>
+<span class="s">.venv</span>
+<span class="s">__pycache__</span>
+<span class="s">EOF</span>
+</code></pre></div>
+
+<p>Add, commit, and push all of these changes, and your site should build
+and deploy to GitHub Pages at the expected url.</p>
+<h1>Hints and Troubleshooting</h1>
+<p>Preview the site locally with</p>
+<div class="highlight"><pre><span></span><code>pelican<span class="w"> </span>-r<span class="w"> </span>-l<span class="w"> </span>--relative-urls
+</code></pre></div>
+
+<p>For images I prefer the convention of adding a subdirectory for each
+page to contain associated images. So for this page:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{attach}/gh-pages-setup/build-deployment.png&quot;</span><span class="p">/&gt;</span>
+</code></pre></div>
+
+<p>If you want to inspect the output of the build action, you can pull
+the contents of the <code>gh-pages</code> branch:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>gh-pages
+git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> </span>gh-pages
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>origin/gh-pages
+</code></pre></div>
+
+<p>I expect that this will be fixed soon, but there's an
+<a href="https://github.com/getpelican/pelican/issues/3431 for now">open issue</a>
+for a problem in which the local site preview fails to reload when
+there are changes. Fix this by adding the following to
+<code>pelicanconf.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># fix https://github.com/getpelican/pelican/issues/3431 for now</span>
+<span class="n">IGNORE_FILES</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://nhoffman.github.io/pelican-gh-pages/tag/python.html">python</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Pelican GitHub Pages Quickstart ",
+  "url" : "https://nhoffman.github.io/pelican-gh-pages",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>
