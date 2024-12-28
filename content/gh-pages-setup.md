@@ -159,6 +159,16 @@ jobs:
 Specifying "submodules: true" in the checkout action: this ensures
 that the Flex submodule is cloned.
 
+Ignore some files:
+
+```sh
+cat > .gitignore<<EOF
+output
+.venv
+__pycache__
+EOF
+```
+
 Add, commit, and push all of these changes, and your site should build
 and deploy to GitHub Pages at the expected url.
 
