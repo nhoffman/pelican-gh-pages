@@ -35,3 +35,6 @@ DEFAULT_PAGINATION = 10
 # RELATIVE_URLS = True
 
 THEME = "./Flex"
+
+# fix https://github.com/getpelican/pelican/issues/3431 for now
+IGNORE_FILES = []

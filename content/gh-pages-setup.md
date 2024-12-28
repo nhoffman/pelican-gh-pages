@@ -195,3 +195,14 @@ git checkout gh-pages
 git fetch origin gh-pages
 git reset --hard origin/gh-pages
 ```
+
+I expect that this will be fixed soon, but there's an
+[open issue](https://github.com/getpelican/pelican/issues/3431 for now)
+for a problem in which the local site preview fails to reload when
+there are changes. Fix this by adding the following to
+`pelicanconf.py`:
+
+```python
+# fix https://github.com/getpelican/pelican/issues/3431 for now
+IGNORE_FILES = []
+```
